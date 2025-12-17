@@ -2,3 +2,22 @@
 day2的时候主要是在看相关项目开发的视频，在配置上踩了一些坑，目前正在调整，预计这周本地部署该项目，这个项目功能比较全，大部分知识点都是涵盖了。
 day3在本地部署了deepseek相关模型（蒸馏版），发现电脑是AMD，而且还不够高端，ollama不太支持，即使是在Linux下也得不到好的支持。因为Ollama主要支持英伟达和苹果的芯片。目前只能说尝试更小量化版本的模型，或者允许模型大幅度使用CPU。之后会更换硬件环境，就不必在意这一点了。今天看了下SpringAI 对话机器人的实现，实现一个对话机器人Demo，可以调用本地部署的大模型，在web页面上进行对话。目前进行会话日志、对接前端。下一步是会话记忆和历史。目前在GitHub上提交了，只当是记录下。
 下了班时间确实不太够用，做笔记、实践等操作也需要耗费很多时间。
+
+https://www.bilibili.com/video/BV1uNk1YxEJQ?spm_id_from=333.788.videopod.episodes&vd_source=cd981fb854a559572119bac96c0726bf&p=2
+这个教程前面关于机器学习、大模型相关的概念 过于笼统、不精炼，对于已经对大模型有一定概念的读者来说，过于冗余了。
+https://www.bilibili.com/video/BV1MtZnYtEB3?spm_id_from=333.788.videopod.episodes&vd_source=cd981fb854a559572119bac96c0726bf&p=11
+课程比较简单，本地部署 + spring AI 体验对话机器人。
+
+出现CPU标高，而GPU未被高效利用的问题：
+● GPU 类型限制：Ollama 对 NVIDIA GPU（依赖 CUDA）和 Apple M 系列芯片（依赖 Metal）的支持较好，但对 AMD GPU 的支持有限（目前主要依赖 CPU 或特定驱动）。（我的GPU刚好是 AMD ）
+● Windows 用户：Ollama 在 Windows 上的 GPU 支持较弱，通常需要通过 WSL2 运行（并在 WSL2 中安装 NVIDIA 驱动），直接在 Windows 原生环境运行可能主要依赖 CPU。
+
+本质是 Ollama 在 Windows 系统下不支持 AMD GPU 加速，导致模型只能依赖 CPU 运行。
+可以看下详细原因：https://www.doubao.com/chat/15247843347088898
+方法：
+启用 WSL2 并安装 Ubuntu 子系统。安装 AMD ROCm 驱动，但很有可能Ollama并不支持。
+关闭其他消耗CPU的程序。尝试更小量化版本的模型（如 Q3_K_M），减少 CPU 计算量（需重新拉取模型：ollama pull deepseek-r1:7b-q3）；增加系统内存（若内存不足，CPU 会因频繁读写虚拟内存而负载升高）。
+现在是在笔记本上跑大模型，之后用台式就方便多了。
+
+提交到GitHub
+第一次编写AI大模型相关项目，这只是一个Demo，目前是完成了调用本地部署的大模型进行对话的功能。目前实现了简单的会话日志，以及成功对接了前端。下一步是做会话记忆与历史功能。
