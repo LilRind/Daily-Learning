@@ -1,0 +1,51 @@
+Day 7
+Function Calling 与 MCP 关系，FC不如叫MFC（大语言模型的API去调用函数的格式/规范），MCP（反而是Server/Agent 去调用函数的方式） 
+
+把AgentX推送到自己项目，并且区分了原作者的分支，也可以拉去原作者最新的更新。
+今天正在尝试安装 CodeGeek、Trae。了解下 AI IDE ，cursor、Claude code（Claude 3.5）、copilot
+目前是快速的选择并使用一项靠谱的 AI IDE 去概览整个项目
+
+Day 6
+如图，LangChain 的核心组件包含六部分组成，分别为：Models、Prompts、Indexes、Memory、Chains、Agents。
+Model
+LangChain 的 Model 模块 包括 Chat Modals, Embeddings Modals, LLMs。
+
+Chat Models 聊天模型
+聊天模型是语言模型的接口（包括入口和出口，类似函数的输入和输出）。虽然聊天模型在内部使用语言模型，但它们所提供的接口略有不同。
+
+LangChain 目前支持的 Chat Modals 聊天模型的 消息类型有
+● AIMessage、
+● HumanMessage、
+● SystemMessage
+● hatMessage，
+
+Chat Models 聊天模型的上下文缓存
+内存缓存方案和数据库缓存方案，当然支持的数据库缓存方案有很多种。
+
+
+流式响应
+这个没啥好说的。
+大模型的流式反馈是基础
+大模型的 API（如 OpenAI 的 API）提供了 “流式调用” 选项（例如 OpenAI 的 stream=True 参数）。当启用流式时，模型会在生成每个 token（或短句）后立即返回，而不是等待整个回答生成完毕。
+这种设计的核心是降低用户等待感：对于长回答，用户可以逐步看到内容，而不必等待全量生成（尤其适合实时交互场景）。
+框架（LangChain）的作用是 “传递” 流式能力：ConversationalRetrievalChain 作为整合 “检索 + 对话 + 生成” 的链，会将底层 LLM 的流式输出能力向上传递，同时处理检索逻辑、对话历史整合等任务，但它本身不产生流式输出。
+
+
+嵌入模型 embeddings model
+嵌入：
+什么是 嵌入模型（Embedding Model）？
+嵌入模型是一种将离散的高维数据（如单词、句子、图片等）映射到连续的低维向量空间的技术。
+这个低维向量空间中的点称为“嵌入”（embedding）。
+嵌入模型的主要目的是捕捉输入数据中的语义或特征信息，使得相似的输入在嵌入空间中距离更近。
+嵌入模型（Embedding Model）特点
+1. 低维表示：嵌入模型将高维、稀疏的离散数据转换为低维、密集的向量表示。
+2. 语义信息：嵌入向量捕捉了输入数据的语义或特征信息，向量之间的距离反映了输入数据之间的相似性。
+3. 效率高：嵌入模型通常计算高效，适合用于大规模数据的相似性搜索和分类任务。
+常见嵌入模型
+1. Word2Vec：通过Skip-Gram或CBOW方法训练，生成单词的嵌入向量。
+2. GloVe：基于全局词共现矩阵训练，生成单词嵌入。
+3. FastText：扩展了Word2Vec，能够处理未见过的词汇。
+嵌入模型（Embedding Model）应用场景
+1. 文本相似度计算：比较两个文本的嵌入向量，计算相似度。
+2. 信息检索：通过嵌入向量进行高效的相似性搜索。
+3. 分类和聚类：使用嵌入向量进行文本或图像的分类和聚类。
