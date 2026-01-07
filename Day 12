@@ -1,1 +1,11 @@
 Day 12
+今天详细看了下RAG关于分片、索引、粗排相关的知识点，以及相对应的代码实现，配置环境花了很多时间，虽然比较简单，但是可以看出来向量化、召回操作，SpringAI、LangChain框架都有对应方法可以提供调用，反倒是对于输入的分片、建立索引需要自己编写。
+下次学习目标：构建出一个 用户查询 → Embedding向量化 → 向量相似度检索 → [可选]Rerank重排序 → 结果融合 → 返回Top-K 的代码，并了解诸如：基于主题相似度的段落扩展、多跳推理、实体消歧算法等
+
+RAG技术分层/技术体系的演进路线
+业界通常这样分层：
+层级	常见叫法	核心特征
+RAG 1.0	Naive RAG	单向量检索 + TopK
+RAG 2.0	Advanced RAG	重排序、Query Rewrite、Fallback
+RAG 2.5	Hybrid RAG	Vector + BM25 / Graph
+RAG 3.0	Knowledge-Augmented RAG	图谱、推理、结构化增强
