@@ -1,0 +1,2 @@
+I've created a mind map about the RAG system engineering architecture, and it's still being improved. I'll also create mind maps for other related knowledge later.
+Visit this link: 【Xmind思维导图】RAG系统工程架构 https://app.xmind.cn/share/6RIh2c6U?xid=UgDWNdAj
