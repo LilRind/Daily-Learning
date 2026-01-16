@@ -1,2 +1,3 @@
-I've created a mind map about the RAG system engineering architecture, and it's still being improved. I'll also create mind maps for other related knowledge later.
+I've created a mind map about the RAG system engineering architecture, and it's still being improved. I'll also create mind maps for other related knowledge later. In the query phase, only the "required" conditions are necessary, while "conditionally required" conditions enhance retrieval and generation effects. Many projects do not implement multi-route recall, fusion, or precise ranking operations.
+
 Visit this link: 【Xmind思维导图】RAG系统工程架构 https://app.xmind.cn/share/6RIh2c6U?xid=ObHmuyl3
