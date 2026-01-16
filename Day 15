@@ -1,0 +1,4 @@
+今天主要分析了，小林-简历分析AI应用中关于简历分析、评分、知识入库（RAG数据接入）的部分。
+如果只是简单构造一个RAG知识库，查询中是只包含召回（向量检索，没有重排序）+限制条数+简单构造Prompt+LLM生成+流式响应的话，Spring AI框架实现比较简单，很多方法都已经写好了，比如向量化检索，入库。
+还有在学习cursor、Claude Code的功能，慢慢熟练掌握中。
+https://github.com/Snailclimb/interview-guide
