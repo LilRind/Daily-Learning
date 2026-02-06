@@ -1,0 +1,51 @@
+今天，学习了“马克的技术工作坊”
+https://www.bilibili.com/video/BV14rzQB9EJj/?spm_id_from=333.337.search-card.all.click&vd_source=cd981fb854a559572119bac96c0726bf
+
+问题：1.目前claude code CLI疑似已经移除了/skill 命令，但是仍然是可以使用skill.md来固定工作流。
+
+记录：
+此视频发布时间为2026-01-25 ，视频中显示claude code 版本为 v2.1.7，注意识别claude code版本。以下我把“claude code”简称 CC
+
+目前已看完Skills，正在看subAgent
+快捷键
+mac 中
+按“shift + Tab”切换模式
+“shift + 回车”输入“回车”
+“Ctrl + g”打开VSCode的标签页，并修改“输入内容”
+“claude --dangerously-skip-permissions，”，可以允许CC执行任何终端命令且不需要用户同意（此选项存在危险，谨慎执行）。
+“Ctrl + b”允许任务到后台，执行后CC可以再次接受用户的输入请求。
+/tasks 可以查看任务，可以按“k”结束。
+/rewind 或者按两下“ESC”，可以选择回滚代码和会话，也可以只回滚代码或会话
+/resume 可以选择回到哪一个会话，或者claude -c，打开CC并自动恢复上一次对话。
+/mcp 打开mcp列表
+/compact "一些用户要求"，可以上下文压缩，也可以直接使用 /compact
+压缩命令可以减少 token 的消耗量。
+/clear 清空上下文，如果之后的任务不需要之前的上下文，可以使用。
+/init 创建Claude.md，可以在文件中加一些自定义的要求，比如每次回答输出时最后加上某些内容。
+/memory ，可以打开Claude.md，有两种记忆，一种是项目记忆Project memory（在项目中记忆生效），一种是用户记忆User memory。
+/hooks 可以允许允许工具前后等时机执行一段逻辑，需要定义matcher和Command，可以放在1.本机本项目 2.本项目生效，可以通过git传递 3.对当前用户生效
+
+tips：
+当你输向大模型输入需求后，CC在文件编辑中，可以选择三项。
+第一项“Yes”是单次允许文件操作。
+第二项“Yes, allow all edits ....”是此次会话文件操作全部允许，不再询问。
+第三项“No”，可以再次输入想法，发送后再次让模型思考、工作。
+
+claude code cli 中有三个模式，mac 中是按“shift + Tab”切换
+默认模式，修改文件前一定询问用户（显示? for shortcuts 即是出于默认模式）
+自动模式，“accept edits on”自动修改文件
+规划模式，“plan mode on”，只讨论、不修改文件
+
+CC在执行终端命令时，也是3个选项，但只能是单词允许终端命令，现在有个隐蔽命令，即claude --dangerously-skip-permissions，可以允许CC执行任何终端命令且不需要用户同意。
+
+“Ctrl + b”允许任务到后台，执行后CC可以再次接受用户的输入请求。
+
+claude code 不能回滚执行终端命令创建的文件。
+
+claudecode可以添加图片，拖入图片到终端，或者 Ctrl+C/Ctrl + V，但是注意CC 不能精准识别图片中字的间距之类的细节，所以可以用到MCP。
+
+/resume 可以选择回到哪一个会话，或者claude -c，打开CC并自动恢复上一次对话。
+
+/mcp 打开mcp列表
+
+输入需求+设计稿URL即可开始工作
