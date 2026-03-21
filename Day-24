@@ -1,0 +1,1 @@
+其实之前有部分天数的学习记录未上传，今天的工作：重新审视了Function Call、MCP的概念、以及MCP数据层常用到的JSON-RPC协议，MCP传输层常用到的stdio（标准化输入输出）、SSE、Streamable HTTP（利用 HTTP 的流式能力来承载 MCP 的 JSON-RPC 协议）
