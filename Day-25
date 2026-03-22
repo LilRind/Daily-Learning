@@ -1,0 +1,1 @@
+今天主要详细回顾了Agent相关的知识，包括Agent 四大模块（规划+行动、记忆、工具、LLM决策）,ReAct，Plan-And-Execute模式，其实工程界的Agent的规划模式不一定单用某种模式，除了Plan-And-Execute + ReAct、Plan后根据任务依赖情况开并发任务执行，汇集任务执行情况再判断是否完成或继续Re-Plan等混合方案或变种方案
