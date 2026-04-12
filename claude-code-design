@@ -1,0 +1,5 @@
+Memory is the complement of code.
+Memory needs to be accurate and can be empty; it is better to have nothing than to have something inaccurate.
+The key points of memory are: 1. What it is. 2. Why it happened. 3. When it occurred.
+Long-term memory needs an expiration warning to prompt the model that the memory might be inaccurate.
+Things that can be directly obtained from the code or tools should not be stored in memory.
